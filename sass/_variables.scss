@@ -4,6 +4,32 @@ $secondary: #547261;
 $error: red;
 $info: gold;
 
+// Color Pallete
+
+$colors:(
+  "primary": $primary,
+  "secondary": $secondary,
+  "error": $error,
+  "info": $info,
+  "blue": blue,
+  "red": red,
+  "orange": orange,
+  "yellow": yellow,
+  "green": green,
+  "indingo": indigo,
+  "violet": violet,
+  "gray": gray,
+  "black": black,
+  "white": white,
+);
+
+.test-btn{
+  background-color: map-get($colors, "primary");
+}
+
+// @debug map-get($colors, "secondary");
+// @debug map-merge($colors, ("pink":pink));
+
 // Spacing
 $base-margin: 0.75rem;
 $base-padding: 0.75rem;
@@ -17,3 +43,8 @@ $base-box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
 
 // Font Sizes
 $base-font-size: 1rem;
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;
+
