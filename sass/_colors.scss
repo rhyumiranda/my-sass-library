@@ -1,0 +1,26 @@
+@each $key, $val in $colors {
+  .text-#{$key}{
+    color: $val
+  }
+
+  .bg-#{$key}{
+    &:hover{
+      color: $val
+    }
+    background-color: $val
+  }
+
+  .card-#{$key}{
+    color: $val
+  }
+
+  @if($val != black $val != white){
+    @for $i from 1 through 9 {
+      .text-#{$key}-light-#{$i}{
+        &:hover{
+          color: mix(white, $val, $i * 10)
+        }
+      }
+    }
+  }
+}

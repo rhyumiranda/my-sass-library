@@ -1,0 +1,73 @@
+// @use 'sass:math';
+
+// $utilities: (
+//   "padding": (
+//     "prefix": "p",
+//     "value": (
+//       "1": $base-padding,
+//       "2": $base-padding * 2,
+//       "3": $base-padding * 4,
+//       "4": $base-padding * 6,
+//       "5": $base-padding * 8
+//     ),
+//   ),
+//   "padding-left": (
+//     "prefix": "pl",
+//     "value": (
+//       "1": $base-padding,
+//       "2": $base-padding * 2,
+//       "3": $base-padding * 4,
+//       "4": $base-padding * 6,
+//       "5": $base-padding * 8
+//     ),
+//   ),
+// );
+
+// @each $property, $map in $utilities{
+//   $prefix: map-get($map, "prefix");
+//   $value: map-get($map, "value");
+
+//   @each $k, $v in $value {
+//     @if ($k == "default"){
+//       .#{$prefix}{
+//         #{$property}: $v;
+//       }
+//     } @else {
+//       .#{$prefix}-#{$k}{
+//         #{$property}: $v; 
+//       }
+//     }
+//   }
+// }
+
+@use 'sass:math';
+
+$utilities: (
+  "padding-left": (
+    "prefix": "pl",
+    "value": (
+      "default": $base-padding,
+      "1": $base-padding * 2,
+      "2": $base-padding * 3,
+      "3": $base-padding * 4,
+      "4": $base-padding * 5,
+    )
+  )
+);
+
+@each $property, $map in $utilities{
+  $prefix: map-get($map, "prefix");
+  $value: map-get($map, "value");
+
+  @each $k, $v in $value{
+    @if ($k == "default"){
+      .#{$prefix}{
+        #{$property}: $v;
+      }
+    } @else {
+      .#{$prefix}-#{$k}{
+        #{$property}: $v;
+      }
+    }
+  }
+}
