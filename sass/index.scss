@@ -6,10 +6,14 @@
 @import 'base';
 
 // Colors
-@import 'components/colors';
+@import 'colors';
 
 // Components (Button, Card, Navbar)
 @import 'components/card';
 @import 'components/buttons';
+@import 'breakpoints';
+@import 'grid';
+@import 'navbar';
 
 // Utilities (Margin, Padding, Oppacity)
+@import 'utilities';
