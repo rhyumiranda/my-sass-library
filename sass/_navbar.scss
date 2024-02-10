@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  background-color: white;
+  position: static;
 }
 
 .navbar{
@@ -14,6 +16,9 @@
 
   .site-title{
     font-size: $font-size-lg;
+  }
 
+  .container{
+    @extend .flex-layout;
   }
 }
